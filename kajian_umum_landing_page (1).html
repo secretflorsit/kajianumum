@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kajian Umum: Di mana dan kapan Doa Dikabulkan</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Great+Vibes&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'brand-dark': '#0d0b0a',
+                        'brand-gold': '#d4af37',
+                        'brand-gold-light': '#f3e5ab',
+                        'brand-gold-dark': '#aa8c2c',
+                        'brand-brown': '#3e2723',
+                    },
+                    fontFamily: {
+                        'serif': ['Cinzel', 'serif'],
+                        'script': ['Great Vibes', 'cursive'],
+                        'sans': ['Inter', 'sans-serif'],
+                    },
+                    backgroundImage: {
+                        'desert-gradient': 'linear-gradient(to bottom, #110e0c 0%, #2a1f18 40%, #c4a176 80%, #b38b59 100%)',
+                        'button-gradient': 'linear-gradient(to right, #ffffff, #fdf6e3)',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background-color: #0d0b0a;
+            color: white;
+            font-family: 'Inter', sans-serif;
+            overflow-x: hidden;
+        }
+        
+        .bg-desert {
+            /* Simulating the desert/dune background - adjusted for mobile */
+            background: 
+                radial-gradient(circle at top left, rgba(255, 223, 112, 0.1) 0%, transparent 50%),
+                linear-gradient(to bottom, #110e0c 0%, #2a1f18 40%, #c4a176 85%, #a47c4a 100%);
+            background-size: cover;
+            background-attachment: fixed;
+        }
+        
+        .glowing-text {
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.8), 0 0 20px rgba(255, 255, 255, 0.4);
+        }
+        
+        .gold-text-gradient {
+            background: linear-gradient(to bottom, #fff8e1 0%, #d4af37 50%, #b8860b 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+
+        .sand-texture {
+            /* A subtle pattern to mimic the sand at the bottom */
+            background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100' height='100' filter='url(%23noise)' opacity='0.05'/%3E%3C/svg%3E");
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 30%;
+            pointer-events: none;
+            mix-blend-mode: overlay;
+        }
+        
+        /* Dashed border for the gold border lines */
+        .gold-border {
+            border: 1px solid rgba(212, 175, 55, 0.5);
+            border-radius: 20px;
+        }
+
+        /* Interactivity Animations */
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .animate-entry {
+            animation: fadeInUp 1s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+            opacity: 0;
+        }
+        .delay-100 { animation-delay: 100ms; }
+        .delay-200 { animation-delay: 200ms; }
+        .delay-300 { animation-delay: 300ms; }
+        .delay-400 { animation-delay: 400ms; }
+        
+        @keyframes pulseGlow {
+            0%, 100% { box-shadow: 0 0 25px rgba(255,255,255,0.4), inset 0 0 10px rgba(255,255,255,0.2); }
+            50% { box-shadow: 0 0 40px rgba(212, 175, 55, 0.8), inset 0 0 15px rgba(212, 175, 55, 0.4); }
+        }
+        .btn-pulse {
+            animation: pulseGlow 2.5s infinite;
+        }
+    </style>
+</head>
+<body class="min-h-screen bg-desert relative flex flex-col justify-between overflow-x-hidden">
+    
+    <!-- Interactive Particles Canvas -->
+    <canvas id="particleCanvas" class="absolute inset-0 pointer-events-none z-[5] w-full h-full"></canvas>
+
+    <!-- Sand Texture Overlay -->
+    <div class="sand-texture"></div>
+
+    <header class="w-full max-w-6xl mx-auto px-4 py-6 flex justify-between items-start z-10 relative">
+        <!-- Logo Area -->
+        <div class="flex items-center gap-2">
+            <img src="assets/logossputih.png" alt="Logo Saghara Semesta" class="h-12 md:h-16 w-auto object-contain drop-shadow-[0_0_8px_rgba(255,255,255,0.3)]" onerror="this.onerror=null; this.src='https://placehold.co/120x120/110e0c/d4af37?text=Logo';">
+        </div>
+        
+        <div class="text-right">
+            <h2 class="font-serif text-lg md:text-2xl tracking-widest font-semibold">Kajian<br>Umum</h2>
+        </div>
+    </header>
+
+    <main class="w-full max-w-6xl mx-auto px-4 flex-grow flex flex-col lg:flex-row relative z-10 gap-8 lg:gap-4 pb-20">
+        
+        <!-- Left Column: Title & Info -->
+        <div class="w-full lg:w-1/2 pt-4 md:pt-8 flex flex-col justify-center items-center text-center lg:items-start lg:text-left animate-entry">
+            
+            <div class="mb-2 relative w-full flex flex-col items-center lg:items-start">
+                <!-- Narrative Text -->
+                <p class="font-sans text-sm md:text-base text-gray-200 mb-8 lg:ml-4 text-center lg:text-left leading-relaxed max-w-lg">
+                    Sudah berdoa berkali-kali tapi merasa belum ada jawaban? Ternyata ada rahasia khusus tentang waktu dan tempat terbaik agar doa lebih mudah menembus langit! Penasaran di mana dan kapan tepatnya? Temukan jawabannya secara eksklusif dI Kajian
+                </p>
+
+                <!-- Small text above main title -->
+                <p class="font-script text-2xl md:text-4xl text-white opacity-90 transform -rotate-2 mb-1 lg:ml-4">Di mana dan kapan</p>
+                
+                <!-- Main Title -->
+                <h1 class="font-script text-5xl sm:text-6xl md:text-8xl lg:text-9xl font-bold text-white leading-none glowing-text tracking-wide mb-4 text-center lg:text-left">
+                    Doa<br>Dikabulkan
+                </h1>
+                
+                <!-- Presenter -->
+                <div class="inline-block border border-brand-gold/60 rounded-full px-4 py-1.5 md:px-6 md:py-2 mb-2 backdrop-blur-sm bg-black/20">
+                    <p class="font-serif text-base md:text-xl text-brand-gold-light">Bersama Ustadz Asep Hidayat</p>
+                </div>
+                <p class="text-[10px] md:text-sm text-gray-300 italic font-sans mb-6 lg:ml-4 text-center lg:text-left">Da'i Siraman Qolbu MNC TV dan Motivator Nasional</p>
+            </div>
+
+            <!-- Countdown Timer -->
+            <div class="w-full max-w-md lg:max-w-none mt-2 mb-8 animate-entry delay-100">
+                <p class="text-xs text-brand-gold/80 font-sans mb-3 text-center lg:text-left lg:ml-4 tracking-widest uppercase">Kajian Dimulai Dalam:</p>
+                <div class="flex gap-3 justify-center lg:justify-start lg:ml-4">
+                    <div class="flex flex-col items-center bg-black/50 border border-brand-gold/40 rounded-xl p-2 md:p-3 w-16 md:w-20 backdrop-blur-md shadow-[0_4px_10px_rgba(0,0,0,0.5)]">
+                        <span id="days" class="font-serif text-2xl md:text-3xl text-brand-gold-light font-bold">00</span>
+                        <span class="text-[9px] md:text-[10px] text-gray-400 uppercase tracking-widest mt-1">Hari</span>
+                    </div>
+                    <div class="flex flex-col items-center bg-black/50 border border-brand-gold/40 rounded-xl p-2 md:p-3 w-16 md:w-20 backdrop-blur-md shadow-[0_4px_10px_rgba(0,0,0,0.5)]">
+                        <span id="hours" class="font-serif text-2xl md:text-3xl text-brand-gold-light font-bold">00</span>
+                        <span class="text-[9px] md:text-[10px] text-gray-400 uppercase tracking-widest mt-1">Jam</span>
+                    </div>
+                    <div class="flex flex-col items-center bg-black/50 border border-brand-gold/40 rounded-xl p-2 md:p-3 w-16 md:w-20 backdrop-blur-md shadow-[0_4px_10px_rgba(0,0,0,0.5)]">
+                        <span id="minutes" class="font-serif text-2xl md:text-3xl text-brand-gold-light font-bold">00</span>
+                        <span class="text-[9px] md:text-[10px] text-gray-400 uppercase tracking-widest mt-1">Menit</span>
+                    </div>
+                    <div class="flex flex-col items-center bg-black/50 border border-brand-gold/40 rounded-xl p-2 md:p-3 w-16 md:w-20 backdrop-blur-md shadow-[0_4px_10px_rgba(0,0,0,0.5)]">
+                        <span id="seconds" class="font-serif text-2xl md:text-3xl text-white font-bold">00</span>
+                        <span class="text-[9px] md:text-[10px] text-brand-gold/80 uppercase tracking-widest mt-1">Detik</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Event Details Grid -->
+            <div class="flex flex-col sm:flex-row gap-6 mt-2 w-full max-w-md lg:max-w-none items-stretch justify-center lg:justify-start animate-entry delay-200">
+                <!-- Time & Date -->
+                <div class="flex flex-col items-center lg:items-start gap-2 bg-black/30 p-4 rounded-xl border border-brand-gold/20 flex-1 justify-center">
+                    <i class="fa-regular fa-calendar-days text-2xl md:text-3xl text-brand-gold mb-1"></i>
+                    <div class="text-center lg:text-left">
+                        <p class="font-serif text-lg md:text-xl font-semibold leading-tight">Sabtu,<br>17 Oktober 2026</p>
+                        <div class="flex items-center justify-center lg:justify-start gap-2 mt-2 text-gray-300 font-sans text-sm">
+                            <i class="fa-regular fa-clock text-brand-gold/80"></i>
+                            <span>08.00-12.00 wib</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Location Highlighted -->
+                <a href="https://maps.app.goo.gl/PUMu4RJv3iRsjfoKA" target="_blank" rel="noopener noreferrer" 
+                   class="relative flex flex-col items-center lg:items-start gap-2 bg-gradient-to-br from-brand-gold/20 to-black/60 p-4 rounded-xl border-2 border-brand-gold shadow-[0_0_20px_rgba(212,175,55,0.25)] flex-1 hover:bg-black/50 hover:shadow-[0_0_30px_rgba(212,175,55,0.6)] hover:border-brand-gold-light transition-all cursor-pointer group w-full overflow-hidden justify-center">
+                    
+                    <!-- Inner Glow effect on hover -->
+                    <div class="absolute inset-0 bg-brand-gold/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    
+                    <i class="fa-solid fa-location-dot text-2xl md:text-3xl text-brand-gold mb-1 group-hover:scale-110 group-hover:-translate-y-1 group-hover:text-white transition-all z-10 duration-300"></i>
+                    
+                    <div class="text-center lg:text-left z-10 w-full">
+                        <p class="font-serif text-lg md:text-xl font-bold leading-tight mb-1 text-brand-gold-light group-hover:text-white transition-colors">Brits Hotel<br>Karawang</p>
+                        <p class="text-xs text-gray-200 font-sans leading-relaxed">
+                            Jl. Tarumanegara Kav. 8,<br>
+                            Telukjambe Timur, Karawang.
+                        </p>
+                        
+                        <!-- CTA Maps Button Inside -->
+                        <div class="mt-3 flex items-center justify-center gap-2 bg-brand-gold text-brand-dark px-4 py-1.5 rounded-full text-[10px] md:text-xs font-bold font-sans group-hover:bg-white transition-colors w-max mx-auto lg:mx-0 shadow-lg">
+                            <i class="fa-solid fa-map-location-dot"></i> BUKA MAPS
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+
+        <!-- Right Column: Poster, Facilities & Registration -->
+        <div class="w-full lg:w-1/2 py-4 flex flex-col items-center z-20 space-y-10">
+            
+            <!-- Poster Display Area -->
+            <div class="w-full max-w-sm rounded-xl shadow-[0_0_30px_rgba(212,175,55,0.25)] border border-brand-gold/40 transform transition duration-500 hover:scale-[1.03] animate-entry delay-100 overflow-hidden">
+                <img src="assets/posterkajian.png" alt="Poster Kajian Umum: Doa Dikabulkan" class="w-full h-auto block" onerror="this.onerror=null; this.src='https://placehold.co/600x800/110e0c/d4af37?text=Gambar+Poster';">
+            </div>
+
+            <!-- Facilities - Centered for mobile -->
+            <div class="w-full max-w-sm bg-black/40 p-6 rounded-2xl border border-brand-gold/20 backdrop-blur-md animate-entry delay-200 transition-all hover:bg-black/50 hover:border-brand-gold/40">
+                <h2 class="font-serif text-3xl md:text-4xl text-brand-gold-light mb-6 text-center drop-shadow-md border-b border-brand-gold/20 pb-4">Fasilitas</h2>
+                
+                <ul class="space-y-4 font-sans text-base md:text-lg mx-auto w-fit">
+                    <li class="flex items-center gap-4 transition-transform hover:translate-x-2">
+                        <div class="w-8 flex justify-center"><i class="fa-solid fa-award text-brand-gold text-xl"></i></div>
+                        <span class="text-gray-100">Exclusive Kajian</span>
+                    </li>
+                    <li class="flex items-center gap-4 transition-transform hover:translate-x-2">
+                        <div class="w-8 flex justify-center"><i class="fa-solid fa-book-open text-brand-gold text-xl"></i></div>
+                        <span class="text-gray-100">Ilmu Bermanfaat</span>
+                    </li>
+                    <li class="flex items-center gap-4 transition-transform hover:translate-x-2">
+                        <div class="w-8 flex justify-center"><i class="fa-regular fa-image text-brand-gold text-xl"></i></div>
+                        <span class="text-gray-100">Dokumentasi Acara</span>
+                    </li>
+                    <li class="flex items-center gap-4 transition-transform hover:translate-x-2">
+                        <div class="w-8 flex justify-center"><i class="fa-solid fa-bell-concierge text-brand-gold text-xl"></i></div>
+                        <span class="text-gray-100">Makan Siang</span>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Call to Action / Registration Button -->
+            <div class="w-full max-w-sm flex flex-col items-center animate-entry delay-300">
+                <div class="text-brand-gold-light font-sans text-sm mb-2 opacity-80 uppercase tracking-widest">Pendaftaran Terbatas</div>
+                
+                <a href="https://forms.gle/WrLkJG77CDZX7v2LA" target="_blank" rel="noopener noreferrer" 
+                   class="bg-button-gradient text-brand-brown font-serif text-xl md:text-2xl font-bold py-4 px-8 rounded-full w-full text-center border-2 border-white transition-all duration-300 flex items-center justify-center gap-3 btn-pulse hover:scale-105 hover:text-black">
+                    <i class="fa-solid fa-pen-to-square"></i>
+                    Daftar Kajian Sekarang
+                </a>
+            </div>
+        </div>
+
+    </main>
+
+    <footer class="w-full max-w-6xl mx-auto px-4 py-8 border-t border-brand-gold/20 flex flex-col md:flex-row justify-between items-center gap-8 z-20 relative font-sans bg-black/40 backdrop-blur-sm mt-auto">
+        
+        <div class="flex flex-col sm:flex-row gap-6 w-full md:w-auto justify-center">
+            <!-- WhatsApp -->
+            <a href="https://wa.me/6285110028919" target="_blank" class="flex items-center justify-center sm:justify-start gap-4 hover:opacity-80 transition-opacity p-3 bg-white/5 rounded-xl border border-white/10">
+                <div class="w-12 h-12 rounded-full bg-white text-green-600 flex items-center justify-center text-2xl shadow-lg">
+                    <i class="fa-brands fa-whatsapp"></i>
+                </div>
+                <div class="text-left">
+                    <p class="text-xs text-brand-gold-light">Narahubung (WhatsApp)</p>
+                    <p class="font-bold text-lg">0851 1002 8919</p>
+                </div>
+            </a>
+        </div>
+
+        <div class="flex flex-col items-center md:items-end text-center md:text-right gap-2">
+            <div class="text-[10px] md:text-xs tracking-widest uppercase text-gray-400">
+                Diselenggarakan oleh
+            </div>
+            <div class="font-serif text-brand-gold text-sm md:text-base font-semibold">
+                SAGHARA SEMESTA TRAINING CENTER
+            </div>
+        </div>
+    </footer>
+
+    <!-- Interactive Background Particles Script -->
+    <script>
+        const canvas = document.getElementById('particleCanvas');
+        const ctx = canvas.getContext('2d');
+        let particlesArray = [];
+        
+        function resizeCanvas() {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        }
+        window.addEventListener('resize', resizeCanvas);
+        resizeCanvas();
+
+        let mouse = { x: null, y: null };
+        window.addEventListener('mousemove', (e) => {
+            mouse.x = e.x;
+            mouse.y = e.y;
+        });
+        window.addEventListener('mouseout', () => {
+            mouse.x = null;
+            mouse.y = null;
+        });
+
+        class Particle {
+            constructor() {
+                this.x = Math.random() * canvas.width;
+                this.y = Math.random() * canvas.height;
+                this.size = Math.random() * 2.5 + 0.5;
+                this.speedX = Math.random() * 1 - 0.5;
+                this.speedY = Math.random() * 1.5 + 0.5; // Move upwards
+                this.color = `rgba(212, 175, 55, ${Math.random() * 0.4 + 0.1})`; // Gold with varying opacity
+            }
+            update() {
+                this.y -= this.speedY;
+                this.x += this.speedX;
+                
+                // Wrap around screen
+                if (this.y < 0 - this.size) {
+                    this.y = canvas.height + this.size;
+                    this.x = Math.random() * canvas.width;
+                }
+                
+                // Interactive mouse repulsion
+                if (mouse.x != null && mouse.y != null) {
+                    let dx = mouse.x - this.x;
+                    let dy = mouse.y - this.y;
+                    let distance = Math.sqrt(dx * dx + dy * dy);
+                    if (distance < 120) {
+                        this.x -= dx / 30;
+                        this.y -= dy / 30;
+                    }
+                }
+            }
+            draw() {
+                ctx.fillStyle = this.color;
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+                ctx.fill();
+            }
+        }
+
+        function initParticles() {
+            particlesArray = [];
+            // Calculate particle count based on screen size (less on mobile for performance)
+            let numberOfParticles = Math.floor((canvas.width * canvas.height) / 12000); 
+            // Cap the particles to prevent lag
+            if (numberOfParticles > 150) numberOfParticles = 150; 
+            
+            for (let i = 0; i < numberOfParticles; i++) {
+                particlesArray.push(new Particle());
+            }
+        }
+
+        function animateParticles() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            for (let i = 0; i < particlesArray.length; i++) {
+                particlesArray[i].update();
+                particlesArray[i].draw();
+            }
+            requestAnimationFrame(animateParticles);
+        }
+
+        // Delay init slightly to ensure rendering is complete
+        setTimeout(() => {
+            initParticles();
+            animateParticles();
+        }, 100);
+
+        // Countdown Logic
+        const eventDate = new Date("Oct 17, 2026 08:00:00").getTime();
+        
+        const updateCountdown = setInterval(() => {
+            const now = new Date().getTime();
+            const distance = eventDate - now;
+            
+            if (distance < 0) {
+                clearInterval(updateCountdown);
+                document.getElementById('days').innerText = "00";
+                document.getElementById('hours').innerText = "00";
+                document.getElementById('minutes').innerText = "00";
+                document.getElementById('seconds').innerText = "00";
+                return;
+            }
+            
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+            
+            // Format to always have 2 digits (e.g., 09 instead of 9)
+            document.getElementById('days').innerText = days.toString().padStart(2, '0');
+            document.getElementById('hours').innerText = hours.toString().padStart(2, '0');
+            document.getElementById('minutes').innerText = minutes.toString().padStart(2, '0');
+            document.getElementById('seconds').innerText = seconds.toString().padStart(2, '0');
+        }, 1000);
+    </script>
+</body>
+</html>
